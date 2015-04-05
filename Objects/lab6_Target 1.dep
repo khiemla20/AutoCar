@@ -1,0 +1,58 @@
+Dependencies for Project 'lab6', Target 'Target 1': (DO NOT MODIFY !)
+F (.\adc0.c)(0x54668C80)(-c --cpu Cortex-M0+ -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork -I C:\MDK\Boards\Freescale\FRDM-KL25Z\AutoCar\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\Kinetis_KLxx_DFP\1.4.0\Device\Include-D_RTE_ -DMKL25Z128xxx4-o .\objects\adc0.o --omf_browse .\objects\adc0.crf --depend .\objects\adc0.d)
+I (C:\Keil_v5\ARM\PACK\Keil\Kinetis_KLxx_DFP\1.4.0\Device\Include\MKL25Z4.h)(0x516878CE)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cm0plus.h)(0x53FD04CA)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x541A706A)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmInstr.h)(0x53FFC59A)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmFunc.h)(0x53FFC59A)
+I (C:\Keil_v5\ARM\PACK\Keil\Kinetis_KLxx_DFP\1.4.0\Device\Include\system_MKL25Z4.h)(0x516878CE)
+I (adc16.h)(0x54668C84)
+F (.\adc16.c)(0x54668C82)(-c --cpu Cortex-M0+ -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork -I C:\MDK\Boards\Freescale\FRDM-KL25Z\AutoCar\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\Kinetis_KLxx_DFP\1.4.0\Device\Include-D_RTE_ -DMKL25Z128xxx4-o .\objects\adc16.o --omf_browse .\objects\adc16.crf --depend .\objects\adc16.d)
+I (C:\Keil_v5\ARM\PACK\Keil\Kinetis_KLxx_DFP\1.4.0\Device\Include\MKL25Z4.h)(0x516878CE)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cm0plus.h)(0x53FD04CA)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x541A706A)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmInstr.h)(0x53FFC59A)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmFunc.h)(0x53FFC59A)
+I (C:\Keil_v5\ARM\PACK\Keil\Kinetis_KLxx_DFP\1.4.0\Device\Include\system_MKL25Z4.h)(0x516878CE)
+I (adc16.h)(0x54668C84)
+F (.\main .c)(0x551B2E69)(-c --cpu Cortex-M0+ -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork -I C:\MDK\Boards\Freescale\FRDM-KL25Z\AutoCar\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\Kinetis_KLxx_DFP\1.4.0\Device\Include-D_RTE_ -DMKL25Z128xxx4-o ".\objects\main .o" --omf_browse ".\objects\main .crf" --depend ".\objects\main .d")
+I (main.h)(0x5463F082)
+I (C:\Keil_v5\ARM\PACK\Keil\Kinetis_KLxx_DFP\1.4.0\Device\Include\MKL25Z4.h)(0x516878CE)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cm0plus.h)(0x53FD04CA)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x541A706A)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmInstr.h)(0x53FFC59A)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmFunc.h)(0x53FFC59A)
+I (C:\Keil_v5\ARM\PACK\Keil\Kinetis_KLxx_DFP\1.4.0\Device\Include\system_MKL25Z4.h)(0x516878CE)
+I (uart.h)(0x5463F084)
+I (adc16.h)(0x54668C84)
+I (timers.h)(0x54596DC0)
+F (.\timers.c)(0x54BAD996)(-c --cpu Cortex-M0+ -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork -I C:\MDK\Boards\Freescale\FRDM-KL25Z\AutoCar\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\Kinetis_KLxx_DFP\1.4.0\Device\Include-D_RTE_ -DMKL25Z128xxx4-o .\objects\timers.o --omf_browse .\objects\timers.crf --depend .\objects\timers.d)
+I (C:\Keil_v5\ARM\PACK\Keil\Kinetis_KLxx_DFP\1.4.0\Device\Include\MKL25Z4.h)(0x516878CE)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cm0plus.h)(0x53FD04CA)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x541A706A)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmInstr.h)(0x53FFC59A)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmFunc.h)(0x53FFC59A)
+I (C:\Keil_v5\ARM\PACK\Keil\Kinetis_KLxx_DFP\1.4.0\Device\Include\system_MKL25Z4.h)(0x516878CE)
+I (timers.h)(0x54596DC0)
+I (adc16.h)(0x54668C84)
+F (.\uart.c)(0x5463F084)(-c --cpu Cortex-M0+ -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork -I C:\MDK\Boards\Freescale\FRDM-KL25Z\AutoCar\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\Kinetis_KLxx_DFP\1.4.0\Device\Include-D_RTE_ -DMKL25Z128xxx4-o .\objects\uart.o --omf_browse .\objects\uart.crf --depend .\objects\uart.d)
+I (main.h)(0x5463F082)
+I (C:\Keil_v5\ARM\PACK\Keil\Kinetis_KLxx_DFP\1.4.0\Device\Include\MKL25Z4.h)(0x516878CE)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cm0plus.h)(0x53FD04CA)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x541A706A)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmInstr.h)(0x53FFC59A)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmFunc.h)(0x53FFC59A)
+I (C:\Keil_v5\ARM\PACK\Keil\Kinetis_KLxx_DFP\1.4.0\Device\Include\system_MKL25Z4.h)(0x516878CE)
+I (uart.h)(0x5463F084)
+F (.\adc16.h)(0x54668C84)()
+F (.\main.h)(0x5463F082)()
+F (.\timers.h)(0x54596DC0)()
+F (.\uart.h)(0x5463F084)()
+F (RTE\Device\MKL25Z128xxx4\startup_MKL25Z4.s)(0x51687276)(--cpu Cortex-M0+ --pd "__EVAL SETA 1" -g --apcs=interwork --pd "__MICROLIB SETA 1"-I C:\MDK\Boards\Freescale\FRDM-KL25Z\AutoCar\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\Kinetis_KLxx_DFP\1.4.0\Device\Include--pd "_RTE_ SETA 1" --pd "MKL25Z128xxx4 SETA 1"--list .\listings\startup_mkl25z4.lst --xref -o .\objects\startup_mkl25z4.o --depend .\objects\startup_mkl25z4.d)
+F (RTE\Device\MKL25Z128xxx4\system_MKL25Z4.c)(0x51687276)(-c --cpu Cortex-M0+ -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork -I C:\MDK\Boards\Freescale\FRDM-KL25Z\AutoCar\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\Kinetis_KLxx_DFP\1.4.0\Device\Include-D_RTE_ -DMKL25Z128xxx4-o .\objects\system_mkl25z4.o --omf_browse .\objects\system_mkl25z4.crf --depend .\objects\system_mkl25z4.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x541A706A)
+I (C:\Keil_v5\ARM\PACK\Keil\Kinetis_KLxx_DFP\1.4.0\Device\Include\MKL25Z4.h)(0x516878CE)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cm0plus.h)(0x53FD04CA)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmInstr.h)(0x53FFC59A)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmFunc.h)(0x53FFC59A)
+I (C:\Keil_v5\ARM\PACK\Keil\Kinetis_KLxx_DFP\1.4.0\Device\Include\system_MKL25Z4.h)(0x516878CE)

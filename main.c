@@ -1,10 +1,8 @@
 /*
 Name :
 				Khiem Lam
-				Benjamin Esqueda
-				Harkaran Cheema
-				Jun Hou Chen
-  */
+				Samuel Weber
+*/
 
 
 #include "main.h" /* include peripheral declarations */
@@ -55,15 +53,6 @@ const uint32_t led_mask[] = { 1UL << 18, 1UL << 19, 1UL << 1 };
  
 void print(unsigned char , int);
 
-/*
-void count1(int Arr[128]){
-int i;
-	for(i=0;i<128;i++){
-		if(Arr[i]==1 && First==0) First=i;
-		if(First!=0 && Arr[i]==0) Second=i-1; 
-	}
-}
-*/
 
 int count0_B(int Arr[128]){
 int i=0;
@@ -118,21 +107,19 @@ unsigned char findMin(unsigned char Arr[128]){
 }
 
 int algorithmFirst(unsigned char buffer[128]){
-	//unsigned char Vol_threshold;
 	int i,count1=0;
 	unsigned char  base,diff;
 	diff=findDiff(buffer,&base);
-	//Vol_threshold=diff/2 + base;
 	Vol_threshold=diff/2+0x0A ;
 	
 	for (i=0;i<128;i++)
 	{
 		if(buffer[i]<Vol_threshold)  {
-			uart0_putchar('0');//pArr[i]=0; //black pixel
+			uart0_putchar('0'); //black pixel
 			ArrControl[i] = 0;
 		}
 		else {
-			uart0_putchar('1');//pArr[i]=1; //white pixel
+			uart0_putchar('1'); //white pixel
 			ArrControl[i] = 1;
 			count1++;
 		}
@@ -350,13 +337,8 @@ void printBuff(unsigned char *ADC_Arr){
 	}
 }
 int main(void){
-	char check;
 	int uart0_clk_khz;
-	char str[] = "\r\nExit! \r\n";
 	char str1[] = "\r\nPlease turn power supply on, then press SW2! \r\n";
-	char str2[] = "\r\nFeedback signals from A_IFB and B_IFB ";
-	char str3[] = "\r\n";
-	unsigned int ret;
 	int flag=1;
 	unsigned char pot1,pot2;
 	int count0_C_R=0, count0_C_L=0;
@@ -364,27 +346,17 @@ int main(void){
 	int timer=0;
 	int count1_C=0;
 	int delTa=0;
-	int delTa_curv=0;
 	int CURV=0;
 	int ST=0, Hill=0;
-	int CURV_BOTH=0;
 	int counter, ACCEL=1;
 	const int ACCEL_LIM=50;
 	const int RATE=2,INIT_RATE=1;
 	unsigned short currentDeg,delTa_CURV,delTa_CURV_W;
 	int ST_TO_CURV = 0,	CURV_TO_ST = 0;
 	const unsigned short centerDeg=4500;
-	unsigned short speedST=50,Wiggle=0;
-	unsigned short A_R[100], idx_CURV=0;
+	unsigned short speedST=50;
 	
-	// Lab 4 variables
-	
-		char strSing[] = "\r\nPing and Sing Buffer \r\n";
-		char strSong[] = "\r\nPong and Song Buffer \r\n";
-   
-    int cq_present; 
-	
-		int pingFlg, singFlg;
+	// Lab 4 variables   
     ping = 1;
 		sing =1;
 		pingTurn=1; //ping buffer start first
@@ -419,7 +391,6 @@ int main(void){
 					ADC0->SC1[0] = 0xD; 			// start conversion (software trigger) on AD13 i.e. ADC0_SE13 (PTB3)
 						while (!(ADC0->SC1[0] & ADC_SC1_COCO_MASK)) {	; }		// wait for conversion to complete (polling)
 						pot1 = ADC0->R[0]; //POT1 left 
-						//PW2 = pot1*2 + pot1/3;
 							print(pot1,1);
 							print(pot1,0);
 							uart0_putchar(' ');
@@ -427,16 +398,12 @@ int main(void){
 					ADC0->SC1[0] = 0xC; 			// start conversion (software trigger) on AD13 i.e. ADC0_SE13 (PTB3)
 							while (!(ADC0->SC1[0] & ADC_SC1_COCO_MASK)) {	; }		// wait for conversion to complete (polling)
 								pot2 = ADC0->R[0]; //POT2 right
-								//PW3 = pot2*2 + pot2/3 ;
 								print(pot2,1);
 								print(pot2,0);
 								uart0_putchar(' ');
 						
 					
 							if(FPTC->PDIR & 1UL<<13) {
-								//PW2 = pot1*2 + pot1/3;
-								//PW3 = pot2*2 + pot2/3 ;
-							//	speedST = (PW2+PW3 )/2;
 								speedST = 200;
 								flag=0;
 								counter=3000;
@@ -457,13 +424,11 @@ int main(void){
 						if (ping)  {
 							count1P=algorithmFirst(ADC_Array0);
 							
-							pingFlg=1;
 						
 						}
 						else {
 							count1P=algorithmFirst(ADC_Array1);
 							
-							pingFlg=0;
 		
 						}
 						
@@ -480,8 +445,6 @@ int main(void){
 								count1_C = count1P;
 								timer--;
 							}
-						
-						//	put(str3);
 							print(count1P,1);
 							print(count1P,0);
 							uart0_putchar(' ');	
@@ -508,71 +471,6 @@ int main(void){
 					}
 		}
 	
-	/*
-		else{
-									 check = uart0_getchar();
-										if(check == 'p'){
-												//Turn off PIT
-										 NVIC_DisableIRQ(PIT_IRQn);
-											
-	
-											
-											if(printLast2){
-											put(str2);
-												print(A_IFB,1);
-												print(A_IFB,0);
-												uart0_putchar(' ');
-											
-												print(B_IFB,1);
-												print(B_IFB,0);
-												uart0_putchar(' ');
-												put(str3);
-											}		
-											 // print buffer contents
-												if (!pingTurn){
-													if (pingFlg) printBuff(ADC_Array0);
-													else printBuff(ADC_Array1);
-												}
-												else {
-													if(singFlg) printBuff(ADC_Array2);
-													else printBuff(ADC_Array3);
-												}
-				 
-							
-																do{
-																		cq_present = 0;
-																		 
-																 
-																				check=uart0_getchar();
-		
-																	
-																	
-																				if (check == 'c'){
-																						
-																						NVIC_EnableIRQ(PIT_IRQn);
-																						cq_present = 1;
-																				}
-				 
-																				else if (check == 'q'){
-																						put(str);
-																						NVIC_DisableIRQ(PIT_IRQn); // PIT interrupt
-																						NVIC_DisableIRQ(ADC0_IRQn); // conversion interrupt
-																						NVIC_DisableIRQ(TPM1_IRQn); //Servo interrupt
-																						NVIC_DisableIRQ(TPM0_IRQn); // motor interrupt
-																						FPTE->PCOR = 1UL<<21; 			// DISABLE H-Bridge
-																						
-																				
-																						cq_present = 1;
-																						return 0;
-																				}
-
-														}while(!cq_present);
-														
-													
-														 
-								} // end check=='p'
-						} // end else
-	*/
 						while(counter-- >0){}
 	
 		ACCEL=INIT_RATE;
@@ -901,97 +799,3 @@ void ADC0_IRQHandler() {
         
 }
 
-/*
-void ADC0_IRQHandler() {
-		//Clear interupt request flag
-				NVIC_ClearPendingIRQ(ADC0_IRQn);		
-				FPTE->PSOR = 1UL<<1; //assert PTE1 /CLK
-		
-				ADC0->CFG2 |= ADC_CFG2_MUXSEL_MASK; // select b channel
-	
-    // read one value from ADC0 using software triggering
-	if(pingTurn){
-			
-		//	counterP++;				
-		 
-				if (ping)
-            ADC_Array0[idxP] = ADC0->R[0];     //Read to Ping buffer	
-				
-				else 
-						ADC_Array1[idxP] = ADC0->R[0];    //Read to Pong buffer  
-				
-				if(idxP==127) {
-					doneP=1;
-					doneS=0;
-					
-				}
-			
-			
-				//if (counterS<127)					
-				if(idxS<128)
-					ADC0->SC1[0] = AIEN_ON | DIFF_SINGLE | ADC_SC1_ADCH(7); // start conversion on C2
-				
-				pingTurn=0; //turn Sing on
-				idxP++;       
-			
-	}
- else {
-	 
-		//		counterS++;
-		
-				if (sing )
-						ADC_Array2[idxS]=ADC0->R[0]; //read data from Result reg, assign it to Sing buffer
-				else 
-						ADC_Array3[idxS]=ADC0->R[0]; // REad data from result reg and assign it to Song buffer
-				if (idxS==127){ 
-					doneS=1;
-					doneP=0;
-				}
-			
-				//if (counterP<128)
-				if(idxP<128)
-					ADC0->SC1[0]=AIEN_ON | DIFF_SINGLE | ADC_SC1_ADCH(6);  //start conversion on C1
-				//else doneP=1;
-			
-				pingTurn=1; //turn Ping on
-				idxS++;       
-				
-			}
-				FPTE->PCOR = 1UL<<1; // deassert PTE1/ CLK
-			
-		
-						
-   	counterGPIO++;
-
-			if(read7){
-				read7=0;
-				A_IFB = ADC0->R[0];
-				ADC0->CFG2 = ADC_CFG2_MUXSEL_MASK;
-				printLast2=1;
-			}
-			if(read3){
-				read3=0;
-				B_IFB = ADC0->R[0];		
-				ADC0->CFG2 = 0;
-				ADC0->SC1[0] = AIEN_ON | DIFF_SINGLE | ADC_SC1_ADCH(7);
-				read7=1;
-			
-			}
-			if(counterGPIO==256){
-				FPTB->PCOR = (1UL << 0); //deassert PTB0, start conversion    
-				
-				//NVIC_ClearPendingIRQ(ADC0_IRQn);
-				ADC0->CFG2 = 0; //select a channel for conversion	
-				//ADC0->SC1[0]=0x3;
-				ADC0->SC1[0]=AIEN_ON | DIFF_SINGLE | ADC_SC1_ADCH(3);
-				read3=1;
-			}
-
-			
-	
-			
-			
-        
-}
-
-*/
